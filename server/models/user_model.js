@@ -27,11 +27,21 @@ const userSchema = new mongoose.Schema(
         },
         userPosts:[{ 
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Post'
+            ref: 'Post',
+            default: undefined
         }],
         userComments:[{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment'
+            ref: 'Comment',
+            default: undefined
+        }],
+        userPostLinks:[{
+            type: String,
+            default: undefined
+        }],
+        userPostCommentLinks:[{
+            type: String,
+            default: undefined
         }],
         profileLink: String
     },
