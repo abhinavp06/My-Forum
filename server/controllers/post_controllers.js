@@ -51,6 +51,7 @@ exports.createPost = async(req,res) => {
     }
 }
 
+// Have to implement enabling user to edit post title which will change the url of the post and reflect that in the user schema as well
 exports.editPost = async(req,res) => {
     // router.put('/:id', async (req, res) => {
     //     const { error } = validateProduct(req.body); 
