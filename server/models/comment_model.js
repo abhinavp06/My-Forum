@@ -6,6 +6,9 @@ const replySchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         },
+        repliedByUsername: {
+            type: String
+        },
         repliedBody:{
             type: String,
             trim: true
@@ -24,6 +27,9 @@ const commentSchema = new mongoose.Schema(
         commentedBy:{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
+        },
+        commentedByUsername:{
+            type: String
         },
         commentBody:{
             type: String,

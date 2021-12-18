@@ -26,6 +26,13 @@ const postSchema = new mongoose.Schema(
             type: Number,
             default: 1
         },
+        // upvotedBy:[{
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     ref: 'User'
+        // }],
+        // upvotedByUsernames: [{
+        //     type: String
+        // }],
         postComments: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Comment'
