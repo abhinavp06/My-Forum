@@ -1,0 +1,506 @@
+{
+	"info": {
+		"_postman_id": "2132aa65-f267-4755-8783-949028cd78a7",
+		"name": "My Forum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signUpUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"abhinav\",\r\n    \"name\":\"Abhinav Parashar\",\r\n    \"email\":\"abhinav@gmail.com\",\r\n    \"password\":\"helloguys\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signInUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"abhinav\",\r\n    \"password\": \"helloguys\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signOutUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/signout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postTitle\": \"My first post\",\r\n    \"postBody\": \"Hi, this is my first post on this forum.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upvotePost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/upvote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"upvote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downvotePost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/downvote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"downvote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editPost",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postBody\":\"Helllloooooooooo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePost",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentBody\":\"test444444\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editComment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentBody\":\"updated comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/comments/61d19c0c8b6c5de7c9a89f7c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"comments",
+						"61d19c0c8b6c5de7c9a89f7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/comments/61d1940bc1d90d5a5d1bf6d1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"comments",
+						"61d1940bc1d90d5a5d1bf6d1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createReply",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentBody\":\"test44\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/comments/61d1940bc1d90d5a5d1bf6d1/replies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"comments",
+						"61d1940bc1d90d5a5d1bf6d1",
+						"replies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editReply",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/comments/61d1940bc1d90d5a5d1bf6d1/replies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"comments",
+						"61d1940bc1d90d5a5d1bf6d1",
+						"replies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteReply",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post/comments/61d1940bc1d90d5a5d1bf6d1/replies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post",
+						"comments",
+						"61d1940bc1d90d5a5d1bf6d1",
+						"replies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPostByURL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/abhinav/My-first-post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"My-first-post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showUserProfile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/abhinav",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersComments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/abhinav/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"abhinav",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Emails and Passwords",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"abhinav\",\r\n    \"name\":\"Abhinav Parashar\",\r\n    \"email\":\"abhinav@gmail.com\",\r\n    \"password\":\"helloguys\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
