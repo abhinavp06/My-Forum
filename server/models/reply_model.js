@@ -1,28 +1,28 @@
 const mongoose = require("mongoose")
 
-const commentSchema = new mongoose.Schema(
+const replySchema = new mongoose.Schema(
     {
-        commentedBy:{
+        repliedBy:{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         },
-        commentedByUsername:{
+        repliedByUsername: {
             type: String
         },
-        commentBody:{
+        replyBody:{
             type: String,
             trim: true
         },
-        commentPoints:{
+        replyPoints:{
             type: Number,
             default: 1
         },
-        commentReplies:[{
+        repliedTo:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Reply'
-        }]
+            ref: 'Comment'
+        }
     },
     {timestamps: true}
 )
 
-module.exports = mongoose.model("Comment", commentSchema)
+module.exports = mongoose.model("Reply", replySchema)

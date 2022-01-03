@@ -1,5 +1,8 @@
 const User = require("../models/user_model")
 const passport = require("passport")
+const Comment = require("../models/comment_model")
+const Reply = require("../models/reply_model")
+
 
 // CUSTOM METHOD TO GENERATE PROFILE LINK
 function profileLinkGenerator(username){
@@ -51,6 +54,50 @@ exports.isAuthenticated = async (req, res, next) => {
     }else{
         res.json(`You are not allowed to edit other's profiles`)
     }
+}
+
+exports.isCommenter = (req,res,next) => {
+    const {commentId} = req.params
+    // var commenter = " "
+    // Comment.findById(commentId, function(err,docs){
+    //     // console.log(docs.commentedByUsername)
+    //     if(err)
+    //         res.json(err)
+    //     else
+    //         commenter = docs.commentedByUsername
+    // })
+    // console.log(commenter)
+    // if(commenter == req.user.username){
+    //     next()
+    // }else{
+    //     res.json("You cannot modify someone's comment.")
+    // }
+    Comment.findById(commentId, function(err,comment){
+        if(err){
+            res.json(err)
+        }else{
+            if(comment.commentedByUsername == req.user.username){
+                next()
+            }else{
+                return res.json(`You cannot modify other's comments.`)
+            }
+        }
+    })
+}
+
+exports.isReplier = (req,res,next) => {
+    const {replyId} = req.params
+    Reply.findById(replyId, function(err,reply){
+        if(err){
+            res.json(err)
+        }else{
+            if(reply.repliedByUsername == req.user.username){
+                next()
+            }else{
+                return res.json(`You cannot modify other's replies.`)
+            }
+        }
+    })
 }
 
 exports.isSignedIn = async(req, res, next) => {
