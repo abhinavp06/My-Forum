@@ -1,5 +1,5 @@
 # Forum API
-Just like in https://linktr.ee/ , a user can sign up and have multiple links displayed.
+Users can sign up, create and comment on posts.
 
 ## Technology Used:
 ### MongoDB, Mongoose, Express, Node.js
